@@ -1,7 +1,7 @@
 import AppHeader from "./AppHeader"
 import AppFooter from "./AppFooter"
 
-const AppLayout = (props) => {
+const AppLayout = (props: any) => {
 
     return (
         <>
