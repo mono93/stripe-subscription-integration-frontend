@@ -1,0 +1,156 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.footer-basic {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 20px 0;
+  width: 100%;
+  background-color: #333;
+  color: #4b4c4d;
+}
+
+.footer-basic .social {
+  text-align: left;
+}
+
+.footer-basic .social>a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 8px;
+  color: white;
+  opacity: 0.75;
+}
+
+.footer-basic .social>a:hover {
+  opacity: 0.9;
+}
+
+.footer-basic .copyright {
+  float: right;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 0;
+  display: inline;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.notification {
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  position: absolute;
+  top: 10px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+
+.aboutProjectWrapper {
+  margin: 285px;
+  text-align: center;
+}
+
+.aboutProjectWrapper>img {
+  margin: 10px;
+}
+
+.joiningSection {
+  margin-top: 10px;
+}
+
+.joiningSection p,
+.joiningSection a {
+  font-size: 12px;
+}
+
+.haveAccount a,
+.forgotPassLink a,
+.joiningSection a {
+  color: #ff9d00 !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
