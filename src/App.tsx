@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <AppLayout>
         <Routes>
+          <Route path='/' element={<AboutProject />} />
           <Route path='/products' element={<ProductList />} />
           <Route path='/payment' element={<Payment />} />
           <Route path='/transactions' element={<Transaction />} />
