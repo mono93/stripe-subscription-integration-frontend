@@ -11,6 +11,7 @@ export interface IProductDetails {
     product_price: number;
     product_is_active: boolean;
     product_frequency: string;
+    product_price_id: string;
 }
 
 interface ISubscriptionDetails {
