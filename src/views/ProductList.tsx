@@ -48,7 +48,7 @@ const ProductList = () => {
                                 <td className="col2">{ele.product_description}</td>
                                 <td className="col3">{Duration[ele.product_frequency as keyof typeof Duration]}</td>
                                 <td className="col4">{ele.product_price}</td>
-                                <td className="col5"><a className="purchaseClass" onClick={() => navigate('/payment', { state: { id: ele.product_price_id } })}> Buy Now </a></td>
+                                <td className="col5"><a className="purchaseClass" onClick={() => navigate('/payment', { state: { data: ele } })}> Buy Now </a></td>
                             </tr>
                         ))}
                     </tbody>

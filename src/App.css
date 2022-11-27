@@ -229,7 +229,14 @@ tr:nth-child(odd) {
   padding: 30px;
 }
 
-.paymentFormgroup label {
+.paymentFormGroup {
+  background: white;
+  box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.paymentFormGroup label {
   position: relative;
   color: #8898AA;
   font-weight: 300;
@@ -239,14 +246,15 @@ tr:nth-child(odd) {
   flex-direction: row;
 }
 
-.paymentFormgroup {
-  background: white;
-  box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
-  margin-bottom: 20px;
+.StripeElement {
+  width: 100%;
 }
 
-.paymentFormgroup label:not(:last-child) {
+.cardElement {
+  margin-bottom: 5px;
+}
+
+.paymentFormGroup label:not(:last-child) {
   border-bottom: 1px solid #F0F5FA;
 }
 
@@ -291,15 +299,29 @@ tr:nth-child(odd) {
   height: 40px;
   line-height: 38px;
   outline: none;
+  cursor: pointer;
+}
+
+.paymentForm button:disabled {
+  background-color: #cccccc;
 }
 
 .paymentFormInfo {
+  margin-left: 50px;
   margin-bottom: 20px;
 }
 
-.paymentFormInfoGroup p>span {
-  margin-right: 130px;
+.rowBlk {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.rowBlk .colBlk6 {
+  flex: 0 50%;
+  width: 50%;
+  text-align: left;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

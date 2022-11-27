@@ -7,7 +7,6 @@ const AppHeader = () => {
     return (
         <ul>
             <li> <NavLink to="products"> Products </NavLink> </li>
-            <li> <NavLink to="payment"> Payment </NavLink> </li>
             <li> <NavLink to="transactions"> Transactions </NavLink> </li>
             <li>
                 <a className="notification" href={void (0)} onClick={() => navigate('/notification')}>
