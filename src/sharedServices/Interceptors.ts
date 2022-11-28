@@ -16,7 +16,7 @@ import {
       headers: {
         ...config.headers,
         ...{
-          'x-project-at': 'authorization#123',
+          'x-project-at': 'authorization@123',
         },
       },
     };
