@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { Fragment, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IBillingDetails, ICardError } from "../models";
+import { PaymentService } from "../services/payment.service";
 
 const CARD_ELEMENT_OPTIONS = {
     hidePostalCode: true,
@@ -34,7 +35,6 @@ const CheckoutForm = (props: any) => {
 
     useEffect(() => {
         const subscription = watch(data => {
-            console.log(data)
             const isEmpty = Object.keys(data).some(d => !data[d as keyof typeof data]);
             setIsFormComplete(!isEmpty)
         })
@@ -57,9 +57,21 @@ const CheckoutForm = (props: any) => {
     };
 
     const onSubmit: SubmitHandler<IBillingDetails> = async (data: IBillingDetails) => {
-        let card: any = elements?.getElement(CardElement);
-        console.log(await stripe?.createToken(card))
-        console.log(data, props)
+        try {
+            let card: any = elements?.getElement(CardElement);
+            let tokenObj = await stripe?.createToken(card);
+
+            let payload = {
+                token: tokenObj?.token,
+                ...data,
+                price_id: props.productInfo.product_price_id
+            }
+            await new PaymentService().createSubscription(payload);
+        } catch (ex) {
+            console.error(ex)
+        }
+
+
     }
 
     return (
