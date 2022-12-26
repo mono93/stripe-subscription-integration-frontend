@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { IProductDetails } from "../models";
+import { IProductDetails, ISubscriptionDetails } from "../models";
 import { ProductService } from "../services/product.service";
 
 const Duration = {
@@ -14,6 +14,7 @@ const ProductList = () => {
 
     const navigate = useNavigate();
     const [productList, setProductList] = useState<IProductDetails[]>([]);
+    const [subscription, setSubscription] = useState<ISubscriptionDetails[]>([]);
 
     useEffect(() => {
         fetchData();
@@ -23,6 +24,7 @@ const ProductList = () => {
         try {
             const res: any = await new ProductService().showProduct();
             setProductList([...res.productDetails])
+            setSubscription([...res.subscriptionDetails])
         } catch (error) {
             console.error(error)
         }
@@ -48,7 +50,7 @@ const ProductList = () => {
                                 <td className="col2">{ele.product_description}</td>
                                 <td className="col3">{Duration[ele.product_frequency as keyof typeof Duration]}</td>
                                 <td className="col4">{ele.product_price}</td>
-                                <td className="col5"><a className="purchaseClass" onClick={() => navigate('/payment', { state: { data: ele } })}> Buy Now </a></td>
+                                <td className="col5">{subscription[0].product_id !== ele.product_id && <a className="purchaseClass" onClick={() => navigate('/payment', { state: { data: ele } })}> Buy Now </a>}</td>
                             </tr>
                         ))}
                     </tbody>

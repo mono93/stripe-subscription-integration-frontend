@@ -14,7 +14,9 @@ export interface IProductDetails {
     product_price_id: string;
 }
 
-interface ISubscriptionDetails {
-
+export interface ISubscriptionDetails {
+    customer_id: string
+    product_id: string
+    subscription_id: string
 }
 

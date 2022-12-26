@@ -62,7 +62,7 @@ const CheckoutForm = (props: any) => {
             let tokenObj = await stripe?.createToken(card);
 
             let payload = {
-                token: tokenObj?.token,
+                token: tokenObj?.token?.id,
                 ...data,
                 price_id: props.productInfo.product_price_id
             }
